@@ -1,7 +1,7 @@
 import sys
+from networksecurity.logging.custom_logging import logging
 
-
-def get_error_message(error_message,error_details):
+def get_error_message(error_message,error_details:sys):
     _,_,exc_tb=error_details.exc_info()
     file_name=exc_tb.tb_frame.f_code.co_filename
     line_number=exc_tb.tb_lineno
@@ -15,3 +15,12 @@ class CustomException(Exception):
 
     def __str__(self):
         return self.error_message
+    
+
+
+if __name__=="__main__":
+    logging.info('logging class working')
+    try:
+        1/0
+    except Exception as e:
+        raise CustomException("CustomException Class Working!",sys)

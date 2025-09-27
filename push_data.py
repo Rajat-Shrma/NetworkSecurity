@@ -19,32 +19,30 @@ MONGO_DB_URL = os.getenv("MONGO_DB_URL")
 class DataExtract:
     def __init__(self, file_path):
         try:
-
+                
             self.data = pd.read_csv(file_path)
-
-        except Exception as e:
+            logging.info('CSV Reading complete!')
+        except Exception as e:  
             raise CustomException(e, sys)
 
     def csv_to_json_converter(self):
         try:
             self.data.reset_index(drop=True, inplace=True)
             records = list(json.loads(self.data.T.to_json()).values())
+            logging.info('Record List Returned.')
             return records
         except Exception as e:
             raise CustomException(e, sys)
 
-    def insert_data_to_mongodb(self, records, database, collection):
+    def insert_data_to_mongodb(self, records, database_name, collection_name):
         try:
-            self.database = database
-            self.collection = collection
-            self.records = records
             self.mongodb_client = MongoClient(MONGO_DB_URL)
 
-            self.database = self.mongodb_client[self.database]
-            self.collection = self.database[self.collection]
+            self.database = self.mongodb_client[database_name]
+            self.collection = self.database[collection_name]
             self.collection.insert_many(records)
 
-            return len(self.records)
+            return len(records)
 
         except Exception as e:
             raise CustomException(e, sys)

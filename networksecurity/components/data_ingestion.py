@@ -10,7 +10,6 @@ import pandas as pd
 import numpy as np
 import os
 import sys
-import pymongo
 from typing import List
 from pymongo import MongoClient
 

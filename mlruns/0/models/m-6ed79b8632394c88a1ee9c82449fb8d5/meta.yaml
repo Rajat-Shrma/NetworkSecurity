@@ -1,0 +1,10 @@
+artifact_location: file:///C:/Users/hp/OneDrive/Desktop/MY/GitHubRS/Network%20Security/mlruns/0/models/m-6ed79b8632394c88a1ee9c82449fb8d5/artifacts
+creation_timestamp: 1759528350990
+experiment_id: '0'
+last_updated_timestamp: 1759528354383
+model_id: m-6ed79b8632394c88a1ee9c82449fb8d5
+model_type: null
+name: model
+source_run_id: 5a651d27d8f74e47a8dcb3f7f93105c0
+status: 2
+status_message: null

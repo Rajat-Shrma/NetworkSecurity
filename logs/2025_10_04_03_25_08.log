@@ -1,0 +1,27 @@
+2025-10-04 03:25:09,852 | INFO | root | Line: 26 | Message: Data ingestion Configration Completed
+2025-10-04 03:25:14,030 | INFO | root | Line: 38 | Message: Data reading from mongo db. Done.
+2025-10-04 03:25:16,754 | INFO | root | Line: 56 | Message: raw data file saved.
+2025-10-04 03:25:16,754 | INFO | root | Line: 63 | Message: Train Test Split Begin.
+2025-10-04 03:25:16,785 | INFO | root | Line: 71 | Message: Train Set Saved.
+2025-10-04 03:25:16,792 | INFO | root | Line: 74 | Message: Test Set Saved.
+2025-10-04 03:25:16,795 | INFO | root | Line: 30 | Message: Data ingestion Completed
+2025-10-04 03:25:16,795 | INFO | root | Line: 32 | Message: DataValidation Started.
+2025-10-04 03:25:16,815 | INFO | root | Line: 32 | Message: Required Number Of Columns: 31 | The Input Dataframe has 31 columns
+2025-10-04 03:25:16,815 | INFO | root | Line: 32 | Message: Required Number Of Columns: 31 | The Input Dataframe has 31 columns
+2025-10-04 03:25:16,815 | INFO | root | Line: 50 | Message: Required Number Of Numberical Columns: 31 | The Input Dataframe has 31 columns
+2025-10-04 03:25:16,815 | INFO | root | Line: 50 | Message: Required Number Of Numberical Columns: 31 | The Input Dataframe has 31 columns
+2025-10-04 03:25:16,916 | INFO | root | Line: 39 | Message: Data Validation Completed
+2025-10-04 03:25:16,916 | INFO | root | Line: 41 | Message: Data Transformation Started
+2025-10-04 03:25:16,916 | INFO | root | Line: 52 | Message: Entered into data transformation
+2025-10-04 03:25:16,916 | INFO | root | Line: 55 | Message: starting data transformation
+2025-10-04 03:25:16,938 | INFO | root | Line: 39 | Message: Enter get_data_transformer_object method of transformation class
+2025-10-04 03:25:16,949 | INFO | root | Line: 50 | Message: Data Transformation completed
+2025-10-04 03:25:16,949 | INFO | root | Line: 53 | Message: ModelTraining Started
+2025-10-04 03:25:17,023 | INFO | root | Line: 96 | Message: logistic_regression Done!
+2025-10-04 03:25:17,916 | INFO | root | Line: 96 | Message: gradient_boosting Done!
+2025-10-04 03:25:19,565 | INFO | root | Line: 96 | Message: ada_boost Done!
+2025-10-04 03:25:19,605 | INFO | root | Line: 96 | Message: decision_tree Done!
+2025-10-04 03:25:22,452 | INFO | root | Line: 96 | Message: svc Done!
+2025-10-04 03:25:32,289 | INFO | root | Line: 96 | Message: knn Done!
+2025-10-04 03:25:32,309 | INFO | root | Line: 96 | Message: naive_bayes Done!
+2025-10-04 03:25:37,954 | INFO | root | Line: 59 | Message: Model Training Compeleted, Best Model Saved!

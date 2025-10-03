@@ -1,4 +1,4 @@
-![NetworkSecurity Project Workflow](https://ppl-ai-code-interpreter-files.s3.amazonaws.com/web/direct-files/067224005996e0ee0427685f9bdbfdad/a348acae-e514-4080-93a7-ac6b32bdce0f/37c050c1.png)
+
 
 # NetworkSecurity
 **NetworkSecurity** is a modular Python-based project focused on network security data ingestion, validation, transformation, and model training, with a strong focus on phishing detection.

@@ -9,6 +9,11 @@ from networksecurity.utils.ml_utils.model.estimator import NetworkModel
 import sys, os
 import mlflow
 
+import dagshub
+dagshub.init(repo_owner='Rajat-Shrma', repo_name='NetworkSecurity', mlflow=True)
+
+
+
 class ModelTrainer:
     def __init__(self, data_transformation_artifacts: DataTransformationArtifacts, model_trainer_config: ModelTrainerConfig):
         try:
@@ -26,7 +31,7 @@ class ModelTrainer:
             mlflow.log_metric('f1 score', f1_score)
             mlflow.log_metric('precision', precision_score)
             mlflow.log_metric('recall_score', recall_score)
-            mlflow.sklearn.log_model(model,'model')
+            # mlflow.sklearn.log_model(model,'model')
 
     def initiate_model_trainer(self)->ModelTrainerArtifacts:
         try:
@@ -72,6 +77,7 @@ class ModelTrainer:
             networkSecurity_model=NetworkModel(preprocessor=preprocessor, model=best_model)
 
             save_object(self.model_trainer_config.model_path, networkSecurity_model)
+            save_object('final_model/model.pkl', best_model)
 
             return ModelTrainerArtifacts(
                 trained_model_path=self.model_trainer_config.model_path,
@@ -79,7 +85,6 @@ class ModelTrainer:
                 test_metric_artifacts=test_classification_metric
 
             )
-
 
 
 

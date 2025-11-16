@@ -1,0 +1,25 @@
+2025-10-07 16:12:26,086 | INFO | httpx | Line: 1025 | Message: HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"
+2025-10-07 16:12:26,093 | INFO | dagshub | Line: 107 | Message: Accessing as Rajat-Shrma
+2025-10-07 16:12:27,615 | INFO | httpx | Line: 1025 | Message: HTTP Request: GET https://dagshub.com/api/v1/repos/Rajat-Shrma/NetworkSecurity "HTTP/1.1 200 OK"
+2025-10-07 16:12:29,052 | INFO | httpx | Line: 1025 | Message: HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"
+2025-10-07 16:12:29,054 | INFO | dagshub | Line: 107 | Message: Initialized MLflow to track repo "Rajat-Shrma/NetworkSecurity"
+2025-10-07 16:12:29,055 | INFO | dagshub | Line: 107 | Message: Repository Rajat-Shrma/NetworkSecurity initialized!
+2025-10-07 16:13:59,991 | INFO | root | Line: 28 | Message: Data Ingestion Started.
+2025-10-07 16:14:04,632 | INFO | root | Line: 38 | Message: Data reading from mongo db. Done.
+2025-10-07 16:14:10,173 | INFO | root | Line: 56 | Message: raw data file saved.
+2025-10-07 16:14:10,173 | INFO | root | Line: 63 | Message: Train Test Split Begin.
+2025-10-07 16:14:10,211 | INFO | root | Line: 71 | Message: Train Set Saved.
+2025-10-07 16:14:10,221 | INFO | root | Line: 74 | Message: Test Set Saved.
+2025-10-07 16:14:10,221 | INFO | root | Line: 32 | Message: Data Ingestion Completed.
+2025-10-07 16:14:10,221 | INFO | root | Line: 43 | Message: Data Validation Started.
+2025-10-07 16:14:10,241 | INFO | root | Line: 32 | Message: Required Number Of Columns: 31 | The Input Dataframe has 31 columns
+2025-10-07 16:14:10,241 | INFO | root | Line: 32 | Message: Required Number Of Columns: 31 | The Input Dataframe has 31 columns
+2025-10-07 16:14:10,242 | INFO | root | Line: 50 | Message: Required Number Of Numberical Columns: 31 | The Input Dataframe has 31 columns
+2025-10-07 16:14:10,243 | INFO | root | Line: 50 | Message: Required Number Of Numberical Columns: 31 | The Input Dataframe has 31 columns
+2025-10-07 16:14:10,341 | INFO | root | Line: 47 | Message: Data Validation Completed.
+2025-10-07 16:14:10,341 | INFO | root | Line: 56 | Message: Data Transformation Started.
+2025-10-07 16:14:10,341 | INFO | root | Line: 52 | Message: Entered into data transformation
+2025-10-07 16:14:10,341 | INFO | root | Line: 55 | Message: starting data transformation
+2025-10-07 16:14:10,359 | INFO | root | Line: 39 | Message: Enter get_data_transformer_object method of transformation class
+2025-10-07 16:14:10,379 | INFO | root | Line: 60 | Message: Data Transformation Completed.
+2025-10-07 16:14:10,380 | INFO | root | Line: 69 | Message: Model Training Started.

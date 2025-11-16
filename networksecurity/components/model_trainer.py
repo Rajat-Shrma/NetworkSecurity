@@ -49,11 +49,15 @@ class ModelTrainer:
 
             models_report,best_models = get_models_report(x_train_arr,y_train_arr,x_test_arr,y_test_arr, models, params)
 
+
             best_accuracy: float= max(models_report.values())
 
             best_model_name=list(models_report.keys())[list(models_report.values()).index(best_accuracy)]
 
+            logging.info(f'Best Model Found: {best_model_name}')
+
             best_model=best_models[best_model_name]
+
 
             y_train_pred=best_model.predict(x_train_arr)
 

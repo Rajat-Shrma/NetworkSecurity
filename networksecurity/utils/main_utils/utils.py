@@ -68,7 +68,6 @@ def load_object(file_path: str) -> object:
     except Exception as e:
         raise CustomException(e, sys)
 
-
 def get_models_report(
     x_train: np.array,
     y_train: np.array,
@@ -80,8 +79,11 @@ def get_models_report(
     models_report = {}
     best_models = {}
     for model_name, model in models.items():
+
         parameters = params[model_name]
         grid = GridSearchCV(model, param_grid=parameters, cv=3)
+
+        
 
         grid.fit(x_train, y_train)
 
@@ -93,6 +95,7 @@ def get_models_report(
 
         models_report[model_name] = best_model_accuracy
         best_models[model_name] = best_model
+
         logging.info(f'{model_name} Done!')
 
     return models_report, best_models

@@ -22,7 +22,7 @@ TRAIN_FILE_NAME: str = "train.csv"
 TEST_FILE_NAME: str = "test.csv"
 
 SCHEMA_FILE_PATH = os.path.join("data_schema", "schema.yaml")
-
+TRAINING_BUCKET_NAME='netwrksecurity'
 """
 Data ingestion related constants starts with DATA_INGESTION VAR NAME
 """
@@ -82,16 +82,46 @@ MODEL_TRAINER_DICT_OF_MODEL_TO_TEST: dict = {
 
 MODEL_TRAINER_PARAMS: dict = {
     "logistic_regression": {
-        "C": [0.1],  # regularization strength
+        "C": [0.01, 0.1, 1],                # regularization strength
         "penalty": ["l2"],
+        "solver": ["liblinear"],             # faster
+        "max_iter": [100]
     },
+
     "gradient_boosting": {
-        "learning_rate": [0.01],  # shrinkage rate
-        "n_estimators": [50],
+        "n_estimators": [50, 100],           # reduced
+        "learning_rate": [0.05, 0.1],
+        "max_depth": [3, 5],                 # shallow trees train faster
+        "subsample": [1.0]
     },
-    "ada_boost": {"n_estimators": [50, 100]},
-    "decision_tree": {"max_depth": [10]},
-    "svc": {"C": [0.1], "kernel": ["rbf"]},
-    "knn": {"n_neighbors": [5]},
-    "naive_bayes": {},  # No major params for GaussianNB
+
+    "ada_boost": {
+        "n_estimators": [50, 100],
+        "learning_rate": [0.1, 1.0],
+        "algorithm": ["SAMME"]        
+    },
+
+    "decision_tree": {
+        "criterion": ["gini", "entropy"],
+        "max_depth": [5, 10],
+        "min_samples_split": [2, 5],
+        "min_samples_leaf": [1, 2]
+    },
+
+    "svc": {
+        "C": [0.1, 1],                       # fewer values
+        "kernel": ["linear", "rbf"],         # no poly (too slow)
+        "gamma": ["scale"]                   # default, faster
+    },
+
+    "knn": {
+        "n_neighbors": [3, 5, 7],
+        "weights": ["uniform", "distance"],
+        "metric": ["euclidean"]              # simpler distance metric
+    },
+
+    "naive_bayes": {
+        "var_smoothing": [1e-9, 1e-8, 1e-7]
+    }
 }
+

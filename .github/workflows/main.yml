@@ -77,7 +77,7 @@ jobs:
           if [ "$(docker ps -q --filter name=mltest)" ]; then
             docker stop mltest && docker rm -fv mltest
           fi
-
+          
       - name: Run Docker container
         run: |
           docker run -d -p 8000:8000 --ipc="host" \

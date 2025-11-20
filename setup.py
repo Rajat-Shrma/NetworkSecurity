@@ -15,7 +15,6 @@ def get_requirements(file_path)->List[str]:
                 requirements.remove(HYPHEN_E_DOT)
         return requirements
         
-
     except Exception as e:
         # raise CustomException(e,sys)
         pass

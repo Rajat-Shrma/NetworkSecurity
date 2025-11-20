@@ -82,10 +82,9 @@ async def predict_route(request: Request, file: UploadFile = File(...)):
         return templates.TemplateResponse(
             "index.html", {"request": request, "table": table_html}
         )
-
+    
     except Exception as e:
         raise CustomException(e, sys)
-
 
 if __name__ == "__main__":
     app_run(app, host="0.0.0.0", port=8000)

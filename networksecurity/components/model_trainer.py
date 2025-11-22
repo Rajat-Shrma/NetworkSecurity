@@ -10,8 +10,10 @@ import sys, os
 import mlflow
 
 import dagshub
-dagshub.init(repo_owner='Rajat-Shrma', repo_name='NetworkSecurity', mlflow=True)
-
+# dagshub.init(repo_owner='Rajat-Shrma', repo_name='NetworkSecurity', mlflow=True)
+os.environ["MLFLOW_TRACKING_URI"]="https://dagshub.com/Rajat-Shrma/NetworkSecurity.mlflow"
+os.environ["MLFLOW_TRACKING_USERNAME"]="Rajat-Shrma"
+os.environ["MLFLOW_TRACKING_PASSWORD"]="5dec20eb9e6dfb91b394b431b745b14147ea4b53"
 
 
 class ModelTrainer:
